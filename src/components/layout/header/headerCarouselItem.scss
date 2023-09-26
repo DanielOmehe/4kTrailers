@@ -1,0 +1,51 @@
+@media only screen and (min-width: 1024px){
+    .movie-flix-carousel-item{
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        text-align: center;
+    
+        .movie-flix-carousel-info-container{
+            width: 50%;
+            position: absolute;
+            left: 50%;
+            top: 85%;
+            transform: translate(-50%, -85%);
+            margin: 0;
+            padding: 0;
+    
+            h1{
+                font-size: 4rem;
+                text-shadow: 0 0 2px rgba(0, 0, 0, .45);
+                margin-bottom: -1.2rem;
+                font-family: 'Barlow Semi Condensed', sans-serif;
+            }
+    
+            p{
+                color: #fff;
+                font-size: .8rem;
+                font-family: 'Barlow Semi Condensed', sans-serif;
+            }
+    
+            .movie-flix-carousel-info{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: .5rem 0;
+    
+                .movie-flix-ratings{
+                    display: flex;
+                    margin-top: .5rem;
+                    color: lightgrey;
+                }
+    
+                p{
+                    margin-left: 1rem;
+                    font-size: 1.2rem;
+                    color: lightgrey;
+                    font-family: 'Barlow Semi Condensed', sans-serif;
+                }
+            }
+        }
+    }
+}

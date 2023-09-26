@@ -1,86 +1,103 @@
-.movie-flix-header{
-    width: 100%;
-    height: 90vh;
-    background: black;
-    color: #fff;
-    position: relative;
-
-    .movie-flix-navbar{
+@media only screen and (min-width: 1024px){
+    .movie-flix-header{
         width: 100%;
-        height: 80px;
-        position: absolute;
-        padding: 0 2.5rem;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-
-        h1{
-            margin-left: 1.5rem;
-            color: #fff;
-            font-size: 2.5rem;       
-
-            span{
-                color: green;
-                font-size: 2.5rem;       
-            }
-        }
-
-        .movie-flix-navItems{
-            display: flex;
-            align-items: center; 
-            justify-content: center;
-            gap: 1.5rem;
-            margin-left: 1.5rem;
-
-            a{
-                color: #fff;
-                font-size: 1rem;
-                text-decoration: none;
-            }
-        }
-
-        .movie-flix-search{
-            margin-left: 4.5rem;
-            width: fit-content;
+        height: 100vh;
+        color: #fff;
+        position: relative;
+    
+        .movie-flix-navbar{
+            width: 100%;
+            height: 80px;
+            position: absolute;
+            padding: 0 2.5rem;
+            z-index: 2;
+            top: 0;
+            left: 0;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: .8rem;
-            background: #fff;
-            color: black;
-            padding: .4rem 1rem;
-            border: 2px solid lightgrey;
-            border-radius: 10px;
-
-            input{
-                width: 500px;
+            justify-content: flex-start;
+    
+            h1{
+                margin-left: 1.5rem;
+                color: #fff;
+                font-size: 2.5rem;       
+    
+                span{
+                    color: green;
+                    font-size: 2.5rem;       
+                }
+            }
+    
+            .movie-flix-navItems{
+                display: flex;
+                align-items: center; 
+                justify-content: center;
+                gap: 1.5rem;
+                margin-left: 1.5rem;
+    
+                a{
+                    color: #fff;
+                    font-size: 1rem;
+                    text-decoration: none;
+                }
+            }
+    
+            .movie-flix-search{
+                margin-left: 4.5rem;
+                width: fit-content;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .8rem;
+                background: #fff;
+                color: black;
+                padding: .4rem 1rem;
+                border: 2px solid lightgrey;
+                border-radius: 10px;
+    
+                input{
+                    width: 500px;
+                    border: none;
+                    outline: none;
+                }
+    
+                input::placeholder{
+                    color: grey;
+                }
+            }
+    
+            button{
+                margin-left: 5rem;
+                padding: .8rem 2rem;
                 border: none;
-                outline: none;
+                background: blue;
+                color: #fff;
+                border-radius: 5px;
+                font-size: 1rem;
+                font-weight: 500;
+                cursor: pointer;
             }
-
-            input::placeholder{
-                color: grey;
+    
+            button:hover{
+                background: #fff;
+                color: blue;
+                border: 2px solid blue;
             }
         }
+    
+        .movie-flix-carousel-container{
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
 
-        button{
-            margin-left: 5rem;
-            padding: .8rem 2rem;
-            border: none;
-            background: blue;
-            color: #fff;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-        }
-
-        button:hover{
-            background: #fff;
-            color: blue;
-            border: 2px solid blue;
+            .hide{
+                display: none;
+                transition: all .5s ease;
+            }
         }
     }
 }
