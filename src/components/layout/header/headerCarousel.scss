@@ -1,0 +1,9 @@
+@media only screen and (min-width: 1024px){
+    .movie-flix-carousel{
+        width: fit-content;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(10, 100vw);
+        gap: 0;
+    }
+}

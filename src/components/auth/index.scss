@@ -1,0 +1,80 @@
+@media only screen and (min-width: 1024px){
+    .movie-flix-auth{
+        width: 500px;
+        height: 600px;
+        background: black;
+        border-radius: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        padding: 2rem;
+    
+        .movie-flix-auth-nav{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            text-align: center;
+            margin-top: 1rem;
+            position: relative;
+    
+            .movie-flix-tabs{
+                width: 100%;
+                padding: .8rem 0;
+                font-family: 'Fraunces', sans-serif;
+                font-weight: 500;
+                cursor: pointer;
+            }
+    
+            .line{
+                background: #009200;
+                height: 5px;
+            }
+    
+            .movie-flix-tabs.active{
+                width: 100%;
+                padding: .8rem 0;
+                cursor: pointer;
+                font-family: 'Fraunces', sans-serif;
+                font-weight: 500;
+                background: rgba(0,0,0,.34);
+            }
+        }   
+
+        .movie-flix-auth-body{
+            width: 100%;
+            margin-top: 1rem;
+            height: 500px;
+
+            .movie-flix-login{
+                width: 100%;
+                height: 100%;
+                border: 2px solid #fff;
+                padding: 3rem 0;
+
+                .movie-flix-login-fields{
+                    width: 100%;
+                    height: auto;
+                    padding: 1rem;
+
+                    label{
+                        font-size: 1.3rem;
+                    }
+
+                    input{
+                        width: 400px;
+                        padding: 1rem 1.5rem;
+                        margin-top: .5rem;
+                    }
+                }
+            }
+
+            .movie-flix-register{
+                width: 100%;
+                height: 100%;
+                border: 2px solid #fff;
+            }
+        }
+    }
+}
