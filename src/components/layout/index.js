@@ -1,8 +1,10 @@
-import Header from "./header"
+import MovieFlixHeader from "./header"
+import MovieFlixFeatured from "../featured"
 
 const MovieFlixHomepage =()=>(
     <>
-        <Header />
+        <MovieFlixHeader />
+        <MovieFlixFeatured />
     </>
 )
 
