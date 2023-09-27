@@ -4,18 +4,18 @@ const MovieFlixSignUpForm =({tabkey})=>{
     return(
         <Formik initialValue={{ fullName: '', email: '', password: '' }}>{
             (handleSubmit, handleChange, handleBlur, handleFocus, values, errors, touched) => (
-            <form>
-                <div className='movie-flix-form-fields'>
-                    <label htmlFor='userName'>Fullname</label>
-                    <input type='text' name='userName' placeholder='Username' />
+            <form className='movie-flix-register'>
+                <div className='movie-flix-register-fields'>
+                    <label htmlFor='fullName'>Fullname</label>
+                    <input type='text' name='fullName' placeholder='Full name' />
                 </div>
-                <div className='movie-flix-form-fields'>
-                    <label htmlFor='userName'>Email</label>
-                    <input type='text' name='userName' placeholder='Username' />
+                <div className='movie-flix-register-fields'>
+                    <label htmlFor='email'>Email</label>
+                    <input type='text' name='email' placeholder='Example@email.com' />
                 </div>
-                <div className='movie-flix-form-fields'>
-                    <label htmlFor='userName'>Password</label>
-                    <input type='text' name='userName' placeholder='Username' />
+                <div className='movie-flix-register-fields'>
+                    <label htmlFor='password'>Password</label>
+                    <input type='text' name='password' placeholder='Password' />
                 </div>
                 <button type='submit'>Sign Up</button>
             </form>

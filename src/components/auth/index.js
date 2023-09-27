@@ -1,4 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useContext } from "react";
+import { FaTimes } from "react-icons/fa";
+import { MovieFlixContext } from "../context";
 import MovieFlixAuthTabs from "./register";
 import MovieFlixLoginForm from "./login";
 import MovieFlixSignUpForm from "./signup";
@@ -10,15 +12,19 @@ const data = [
 ];
 
 const MovieFlixAuth = () => {
-	const [currentTab, setCurrentTab] = useState("");
-	const tabRef = useRef({});
+	const [currentTab, setCurrentTab] = useState(data[0].name);
 
-	const switchTabs = (tabName) => setCurrentTab(tabName);
+	const { showForm, hide } = useContext(MovieFlixContext);
 
-	console.log(currentTab);
-    console.log(tabRef.current.offsetWidth)
+	const switchTabs = (tabName) => {
+		setCurrentTab(tabName);
+	};
 	return (
-		<div className="movie-flix-auth">
+		<div
+			className="movie-flix-auth"
+			style={{ top: `${showForm ? "50%" : "-100%"}` }}
+		>
+			<FaTimes size={20} className="close-form" onClick={hide} />
 			<div className="movie-flix-auth-nav">
 				{data.map((data) => (
 					<div
@@ -27,14 +33,12 @@ const MovieFlixAuth = () => {
 								? "active movie-flix-tabs"
 								: "movie-flix-tabs"
 						}
-						onClick={() => switchTabs(currenTab => data.name)}
-						ref={tabRef}
+						onClick={() => switchTabs((currenTab) => data.name)}
 						key={data.name}
 					>
 						{data.name}
 					</div>
 				))}
-				<div style={{width: `${tabRef.current.offsetWidth && ''}px`, left: `${tabRef.current.offsetLeft && ''}px`, position: 'absolute' }} className="line" />
 			</div>
 			<MovieFlixAuthTabs currentTab={currentTab}>
 				<MovieFlixLoginForm tabkey="Login" />

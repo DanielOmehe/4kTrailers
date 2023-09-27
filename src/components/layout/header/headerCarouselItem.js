@@ -1,15 +1,23 @@
 import "./headerCarouselItem.scss";
 import { BsStar } from "react-icons/bs";
+import { AiOutlinePlayCircle } from 'react-icons/ai'
+import { MdFavoriteBorder } from 'react-icons/md';
 
 const MovieFlixCarouselItem = ({ item }) => {
+
+    let classes = ["movie-flix-carousel-item"]
+    if(item){
+        classes.push('active')
+    }
 	return (
 		<div
 			className="movie-flix-carousel-item"
 			style={{
-				background: `linear-gradient(0.35turn, rgba(0,0,0,.23), rgba(0,0,0,.93)), url('https://image.tmdb.org/t/p/original${item.backdrop_path}')`,
+				background: `linear-gradient(0.35turn, rgba(0,0,0,.19), rgba(0,0,0,.99)), url('https://image.tmdb.org/t/p/original${item.backdrop_path}')`,
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",
-				backgroundPosition: "100% 70%",
+				backgroundPosition: "40% 10%",
+
 			}}
 		>
 			<div className="movie-flix-carousel-info-container">
@@ -21,7 +29,17 @@ const MovieFlixCarouselItem = ({ item }) => {
 					</div>
 					<p>{item.release_date}</p>
 				</div>
-                <p>{item.overview}</p>
+				<p className="movie-flix-overview">{item.overview}</p>
+				<div className="movie-flix-controls">
+					<button className="watch-now">
+                    <p>Watch Now</p>
+                    <AiOutlinePlayCircle size={20} />
+                    </button>
+					<button className="add-to-watchlist">
+                    <p>Add to WatchList</p>
+                    <MdFavoriteBorder size={20} />
+                    </button>
+				</div>
 			</div>
 		</div>
 	);
