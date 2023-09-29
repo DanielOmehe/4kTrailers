@@ -1,11 +1,11 @@
-import MovieFlixHeader from "./header"
-import MovieFlixFeatured from "../featured"
+import RustedRageHeader from "./header"
+import RustedRageContent from "./content"
 
-const MovieFlixHomepage =()=>(
+const RustedRageHomepage =()=>(
     <>
-        <MovieFlixHeader />
-        <MovieFlixFeatured />
+        <RustedRageHeader />
+        <RustedRageContent />
     </>
 )
 
-export default MovieFlixHomepage
+export default RustedRageHomepage

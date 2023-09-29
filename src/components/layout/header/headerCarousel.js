@@ -1,9 +1,9 @@
 import './headerCarousel.scss'
 
-const MovieFlixCarousel =({children})=>{
+const RustedRageCarousel =({children})=>{
     return(
-        <div className="movie-flix-carousel">{children}</div>
+        <div className="rusted-rage-carousel">{children}</div>
     )
 }
 
-export default MovieFlixCarousel
+export default RustedRageCarousel

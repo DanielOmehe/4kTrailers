@@ -1,19 +1,19 @@
 import { Formik } from 'formik'
 
-const MovieFlixSignUpForm =({tabkey})=>{
+const RustedRageSignUpForm =({tabkey})=>{
     return(
         <Formik initialValue={{ fullName: '', email: '', password: '' }}>{
             (handleSubmit, handleChange, handleBlur, handleFocus, values, errors, touched) => (
-            <form className='movie-flix-register'>
-                <div className='movie-flix-register-fields'>
+            <form className='rusted-rage-register'>
+                <div className='rusted-rage-register-fields'>
                     <label htmlFor='fullName'>Fullname</label>
                     <input type='text' name='fullName' placeholder='Full name' />
                 </div>
-                <div className='movie-flix-register-fields'>
+                <div className='rusted-rage-register-fields'>
                     <label htmlFor='email'>Email</label>
                     <input type='text' name='email' placeholder='Example@email.com' />
                 </div>
-                <div className='movie-flix-register-fields'>
+                <div className='rusted-rage-register-fields'>
                     <label htmlFor='password'>Password</label>
                     <input type='text' name='password' placeholder='Password' />
                 </div>
@@ -23,4 +23,4 @@ const MovieFlixSignUpForm =({tabkey})=>{
     )
 }
 
-export default MovieFlixSignUpForm
+export default RustedRageSignUpForm

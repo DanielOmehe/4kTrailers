@@ -2,28 +2,28 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import "./index.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import MovieFlixHomepage from "./components/layout";
-import MovieFlixMovies from "./components/movies";
-import MovieFlixTvShows from "./components/tvshows";
-import MovieFlixWatchList from "./components/watchlist";
-import MovieFlixProvider from "./components/context";
+import RustedRageHomepage from "./components/layout";
+import RustedRageMovies from "./components/movies";
+import RustedRageTvShows from "./components/tvshows";
+import RustedRageWatchList from "./components/watchlist";
+import RustedRageProvider from "./components/context";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <MovieFlixHomepage />,
+		element: <RustedRageHomepage />,
 	},
 	{
 		path: "movies",
-		element: <MovieFlixMovies />,
+		element: <RustedRageMovies />,
 	},
 	{
 		path: "shows",
-		element: <MovieFlixTvShows />,
+		element: <RustedRageTvShows />,
 	},
 	{
 		path: "watchlist",
-		element: <MovieFlixWatchList />,
+		element: <RustedRageWatchList />,
 	},
 	{
 		path: "/shows/:movie-name",
@@ -38,8 +38,8 @@ const router = createBrowserRouter([
 const root = createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
-		<MovieFlixProvider>
+		<RustedRageProvider>
 			<RouterProvider router={router} />
-		</MovieFlixProvider>
+		</RustedRageProvider>
 	</React.StrictMode>
 );
