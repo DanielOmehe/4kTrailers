@@ -2,10 +2,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+// #070b11
+// --lt-color-gray-100: #f8f9fc;
+// --lt-color-gray-200: #f1f3f9;
+// --lt-color-gray-300: #dee3ed;
+// --lt-color-gray-400: #c2c9d6;
+// --lt-color-gray-500: #8f96a3;
+// --lt-color-gray-600: #5e636e;
+// --lt-color-gray-700: #2f3237;
+// --lt-color-gray-800: #1d1e20;
+// --lt-color-gray-900: #111213;
+// --lt-color-white: #fff !important;
+// --lt-color-black: #111213 !important;
+// --lt-color-transparent: rgba(255, 255, 255, 0) !important;
+// --lt-color-background-light: var(--lt-color-gray-100) !important;
+// --lt-color-background-default: var(--lt-color-gray-200) !important;
+// --lt-color-background-dark: var(--lt-color-gray-300) !important;
+// --lt-color-border-light: var(--lt-color-gray-200) !important;
+// --lt-color-border-default: var(--lt-color-gray-300) !important;
+// --lt-color-border-dark: var(--lt-color-gr…
+// --blue: #007bff;
+// --indigo: #6610f2;
+// --purple: #6f42c1;
+// --pink: #e83e8c;
+// --red: #dc3545;
+// --orange: #fd7e14;
+// --yellow: #ffc107;
+// --green: #28a745;
+// --teal: #20c997;
+// --cyan: #17a2b8;
+// --white: #fff;
+// --gray: #6c6c6c;
+// --gray-dark: #343434;
+// --primary: #68a837;
+// --primary1: #578d2e;
+// --primary2: black;
+// --secondary: #A4BF43;
+// --secondary1: #b3c961;
+// --secondary2: #647428;
+// --success: #28a745;
+// --info: #17a2b8;
+// --warning: #ffc107;
+// --danger: #dc3545;
+// --light: #ececec;
+// --dark: #343434;
+// --breakpoint-xs: 0;
+// --breakpoint-sm: 576px;
+// --breakpoint-md: 768px;
+// --breakpoint-lg: 992px;
+// --breakpoint-xl: 1200px;
+// --breakpoint-xxl: 1400px;
+// --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+// --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+// --swiper-theme-color: #007aff;
+
 *{
     margin: 0;
     padding: 0;
     font-family: 'Fraunces', sans-serif;
+    box-sizing: border-box;
     color: #fff;
 }
 
@@ -18,7 +73,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #000;
+  background: #070b11;
 }
 
 code {

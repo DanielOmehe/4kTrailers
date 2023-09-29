@@ -1,8 +1,8 @@
-@media only screen and (min-width: 1024px){
-    .movie-flix-auth{
+@media only screen and (min-width: 1200px){
+    .rusted-rage-auth{
         width: 400px;
         height: 500px;
-        background: black;
+        background: #070b11;
         border-radius: 20px;
         position: absolute;
         left: 50%;
@@ -18,7 +18,7 @@
             cursor: pointer;
         }
     
-        .movie-flix-auth-nav{
+        .rusted-rage-auth-nav{
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -26,7 +26,7 @@
             margin-top: 1rem;
             position: relative;
     
-            .movie-flix-tabs{
+            .rusted-rage-tabs{
                 width: 100%;
                 padding: .8rem 0;
                 font-family: 'Fraunces', sans-serif;
@@ -34,28 +34,28 @@
                 cursor: pointer;
             }
     
-            .movie-flix-tabs.active{
+            .rusted-rage-tabs.active{
                 width: 100%;
                 padding: .8rem 0;
                 cursor: pointer;
                 font-family: 'Fraunces', sans-serif;
                 font-weight: 500;
-                background: rgba(0,0,0,.74);
+                background: rgba(0,0,0,.09);
                 border-bottom: 5px solid #009200;
             }
         }   
 
-        .movie-flix-auth-body{
+        .rusted-rage-auth-body{
             width: 100%;
             margin-top: 2rem;
             height: 500px;
 
-            .movie-flix-login{
+            .rusted-rage-login{
                 width: 100%;
                 height: 60%;
                 margin-top: 1rem;
 
-                .movie-flix-login-fields{
+                .rusted-rage-login-fields{
                     width: 100%;
                     height: auto;
                     margin-top: 2rem;
@@ -64,7 +64,7 @@
 
                     label{
                         font-size: 1.3rem;
-                        font-family: 'Fraunces', sans-serif;
+                        font-family: 'Montserrat', sans-serif;
                         margin-bottom: 1rem;
                     }
 
@@ -77,10 +77,11 @@
                         color: #fff;
                         outline: none;
                         transition: border .2s linear;
+                        font-family: 'Montserrat', sans-serif;
                     }
 
                     input:focus{
-                        border: 1px solid #009200;
+                        border: 1px solid #fd7e14;
                     }
                 }
 
@@ -90,19 +91,20 @@
                     margin: 3rem auto;
                     cursor: pointer;
                     border-radius: 5px;
-                    background-color: #053d05;
+                    background-color: #fd7e14;
                     border: none;
                     font-size: 1rem;
+                    font-family: 'Montserrat', sans-serif;
                     color: #fff;
                     outline: none;
                 }
             }
 
-            .movie-flix-register{
+            .rusted-rage-register{
                 width: 100%;
                 height: 100%;
 
-                .movie-flix-register-fields{
+                .rusted-rage-register-fields{
                     width: 100%;
                     height: auto;
                     margin-top: 1rem;
@@ -116,7 +118,7 @@
                         width: 92%;
                         margin-top: .8rem;
                         padding: 1rem;
-                        background: #000;
+                        background: none;
                         color: #fff;
                         font-size: .8rem;
                         border: 1px solid #fff;
@@ -126,7 +128,7 @@
                     }
                 }
 
-                .movie-flix-register-fields:nth-child(1){
+                .rusted-rage-register-fields:nth-child(1){
                     margin-top: 0;
                 }
 
@@ -137,7 +139,7 @@
                     margin-top: 1.5rem;
                     font-size: 1rem;
                     cursor: pointer;
-                    background-color: #053d05;
+                    background-color: #fd7e14;
                     border: none;
                     border-radius: 5px;
                     outline: none;

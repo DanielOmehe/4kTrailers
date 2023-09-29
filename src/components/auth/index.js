@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import { FaTimes } from "react-icons/fa";
-import { MovieFlixContext } from "../context";
-import MovieFlixAuthTabs from "./register";
-import MovieFlixLoginForm from "./login";
-import MovieFlixSignUpForm from "./signup";
+import { RustedRageContext } from "../context";
+import RustedRageAuthTabs from "./register";
+import RustedRageLoginForm from "./login";
+import RustedRageSignUpForm from "./signup";
 import "./index.scss";
 
 const data = [
@@ -11,27 +11,27 @@ const data = [
 	{ id: 1, name: "Register" },
 ];
 
-const MovieFlixAuth = () => {
+const RustedRageAuth = () => {
 	const [currentTab, setCurrentTab] = useState(data[0].name);
 
-	const { showForm, hide } = useContext(MovieFlixContext);
+	const { showForm, hide } = useContext(RustedRageContext);
 
 	const switchTabs = (tabName) => {
 		setCurrentTab(tabName);
 	};
 	return (
 		<div
-			className="movie-flix-auth"
+			className="rusted-rage-auth"
 			style={{ top: `${showForm ? "50%" : "-100%"}` }}
 		>
 			<FaTimes size={20} className="close-form" onClick={hide} />
-			<div className="movie-flix-auth-nav">
+			<div className="rusted-rage-auth-nav">
 				{data.map((data) => (
 					<div
 						className={
 							data.name === currentTab
-								? "active movie-flix-tabs"
-								: "movie-flix-tabs"
+								? "active rusted-rage-tabs"
+								: "rusted-rage-tabs"
 						}
 						onClick={() => switchTabs((currenTab) => data.name)}
 						key={data.name}
@@ -40,12 +40,12 @@ const MovieFlixAuth = () => {
 					</div>
 				))}
 			</div>
-			<MovieFlixAuthTabs currentTab={currentTab}>
-				<MovieFlixLoginForm tabkey="Login" />
-				<MovieFlixSignUpForm tabkey="Register" />
-			</MovieFlixAuthTabs>
+			<RustedRageAuthTabs currentTab={currentTab}>
+				<RustedRageLoginForm tabkey="Login" />
+				<RustedRageSignUpForm tabkey="Register" />
+			</RustedRageAuthTabs>
 		</div>
 	);
 };
 
-export default MovieFlixAuth;
+export default RustedRageAuth;

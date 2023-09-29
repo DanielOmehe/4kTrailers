@@ -1,9 +1,9 @@
 import { Children } from 'react';
 import './index.scss';
 
-const MovieFlixAuthTabs =({children, currentTab})=>{
+const RustedRageAuthTabs =({children, currentTab})=>{
     return (
-        <div className='movie-flix-auth-body'>
+        <div className='rusted-rage-auth-body'>
             {
                 Children.map(children, (child) => (
                     <>{child.props.tabkey === currentTab ? child : null}</>
@@ -13,4 +13,4 @@ const MovieFlixAuthTabs =({children, currentTab})=>{
     )
 }
 
-export default MovieFlixAuthTabs
+export default RustedRageAuthTabs

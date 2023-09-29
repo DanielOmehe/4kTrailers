@@ -1,22 +1,22 @@
-@media only screen and (min-width: 1024px){
-    .movie-flix-header{
+@media only screen and (min-width: 1200px){
+    .rusted-rage-header{
         width: 100%;
         height: 90vh;
         color: #fff;
         position: relative;
 
-        .movie-flix-navbar.scrolled{
+        .rusted-rage-navbar.scrolled{
             position: fixed;
             top: 0;
             left: 0;
             background-color: lightblue;
           }
     
-        .movie-flix-navbar{
+        .rusted-rage-navbar{
             width: 100%;
             height: 80px;
             position: absolute;
-            padding: 0 2.5rem;
+            padding: 0 4rem;
             z-index: 2;
             top: 0;
             left: 0;
@@ -34,8 +34,12 @@
                     font-size: 2.5rem;       
                 }
             }
+
+            .rusted-rage-logo{
+                margin-left: 4rem;
+            }
     
-            .movie-flix-navItems{
+            .rusted-rage-navItems{
                 display: flex;
                 align-items: center; 
                 justify-content: center;
@@ -49,23 +53,26 @@
                 }
             }
     
-            .movie-flix-search{
-                margin-left: 5rem;
+            .rusted-rage-search{
+                margin-left: 15rem;
                 width: fit-content;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 gap: .8rem;
-                background: #fff;
+                background: #070b11;
+                opacity: .9;
                 color: black;
                 padding: .4rem 1rem;
-                border: 2px solid lightgrey;
+                border: 2px solid darkgray;
                 border-radius: 10px;
     
                 input{
                     width: 400px;
                     border: none;
                     outline: none;
+                    background: none;
+                    border: none;
                 }
     
                 input::placeholder{
@@ -73,11 +80,11 @@
                 }
             }
     
-            button{
-                margin-left: 5rem;
+            .rusted-rage-register{
+                margin-left: 15rem;
                 padding: .8rem 2rem;
                 border: none;
-                background: #017033;
+                background: #fd7e14;
                 color: #fff;
                 border-radius: 5px;
                 font-size: 1rem;
@@ -86,13 +93,13 @@
             }
     
             button:hover{
-                background: none;
-                color: #fff;
-                border: 2px solid #017033;
+                background: #fff;
+                color: #fd7e14;
+                border: 2px solid #fd7e14;
             }
         }
     
-        .movie-flix-carousel-container{
+        .rusted-rage-carousel-container{
             width: 100%;
             height: 100%;
             overflow-x: hidden;
@@ -100,8 +107,29 @@
             top: 0;
             left: 0;
             z-index: 1;
+            background: linear-gradient(#070b11, #070b11);
 
-            .hide{
+            .chevron:first-child{
+                position: absolute;
+                top: 45%;
+                left: 1%;
+                cursor: pointer;
+                opacity: .4;
+            }
+
+            .chevron:last-child{
+                position: absolute;
+                top: 45%;
+                left: 96%;
+                cursor: pointer;
+                opacity: .4;
+            }
+
+            .chevron:hover{
+                opacity: 1;
+            }
+
+            .chevron.hide{
                 display: none;
                 transition: all .5s ease;
             }

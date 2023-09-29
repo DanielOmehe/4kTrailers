@@ -1,13 +1,9 @@
 import './loader.scss'
 
-const MovieFlixLoader = () => {
+const RustedRageLoader = () => {
     return(
-        <div className="movie-flix-loader">
-            <div />
-            <div />
-            <div />
-        </div>
+        <div className="rusted-rage-loader"></div>
     )
 }
 
-export default MovieFlixLoader
+export default RustedRageLoader

@@ -1,18 +1,18 @@
 import { createContext, useState } from "react";
 
-export const MovieFlixContext = createContext();
+export const RustedRageContext = createContext();
 
-const MovieFlixProvider = ({ children }) => {
+const RustedRageProvider = ({ children }) => {
 	const [showForm, setShowFormForm] = useState(false);
 
 	const show = () => setShowFormForm(true);
 	const hide = () => setShowFormForm(false);
 
 	return (
-		<MovieFlixContext.Provider value={{ showForm, show, hide }}>
+		<RustedRageContext.Provider value={{ showForm, show, hide }}>
 			{children}
-		</MovieFlixContext.Provider>
+		</RustedRageContext.Provider>
 	);
 };
 
-export default MovieFlixProvider;
+export default RustedRageProvider;
