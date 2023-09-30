@@ -1,0 +1,28 @@
+@media only screen and (min-width: 1200px){
+    .rusted-rage-menu{
+        position: absolute;
+        width: 200px;
+        height: auto;
+        background: #070b11;
+        top: 75%;
+        left: 4%;
+        padding: 1.5rem;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem 0;
+
+        a{
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: .5rem;
+
+            p{
+                font-size: 1rem;
+                font-family: 'Montserrat', sans-serif;
+            }
+        }
+    }
+}

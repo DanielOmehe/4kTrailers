@@ -17,6 +17,8 @@
             width: 220px;
             border-radius: 5px;
             overflow: hidden;
+            position: relative;
+            z-index: 1;
 
             img{
                 width: 100%;

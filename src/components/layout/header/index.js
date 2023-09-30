@@ -18,6 +18,11 @@ const RustedRageHeader = () => {
 	const [movieList, setMovieList] = useState([]);
 	const [currentMovie, setCurrentMovie] = useState(0);
 	const [scrolled, setScrolled] = useState(false);
+	const [genres, setGenres] = useState([]);
+	const [showMenu, setShowMenu] = useState(false);
+
+	const toggleMenu =()=> setShowMenu((showMenu) => !showMenu);
+
 	const handleScroll = () => {
 		const offset = window.scrollY;
 		if (offset > 200) {
@@ -32,19 +37,29 @@ const RustedRageHeader = () => {
 		navbarClasses.push("scrolled");
 	}
 
-	console.log(movieList);
-
 	const api_key = "b62dddbb37d8ec434e52a02797220057";
 
 	const { show } = useContext(RustedRageContext);
 
+	const getGenres = async () => {
+		try {
+			const response = await axios.get(
+				`https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=${api_key}`
+			);
+			const data = await response.data;
+			setGenres(data.genres);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
 	const getMovies = async () => {
 		try {
 			const response = await axios.get(
-				`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=${api_key}`
+				`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&sort_by=popularity.desc&with_genres=action%2C%20adventure%2Cthriller%2C%20horror&api_key=${api_key}`
 			);
 			const data = await response.data;
-			setMovieList(data.results.slice(10, 20));
+			setMovieList(data.results.slice(0, 10));
 		} catch (error) {
 			console.error(error);
 		}
@@ -62,7 +77,7 @@ const RustedRageHeader = () => {
 
 	useEffect(() => {
 		getMovies();
-
+		getGenres();
 		window.addEventListener("scroll", handleScroll);
 
 		const interval = setInterval(() => {
@@ -74,14 +89,34 @@ const RustedRageHeader = () => {
 		return () => clearInterval(interval);
 	}, [currentMovie, movieList.length]);
 
+	const allGenres = movieList.map(({ title, genre_ids }) => {
+		const genreNames = genre_ids.map((id) =>
+			genres.filter((genre) => genre.id === id)
+		);
+
+		return genreNames;
+	});
+
 	return (
 		<header className="rusted-rage-header">
 			<nav className={navbarClasses}>
-				<TfiMenuAlt size={30} />
-				<RustedRageMenu />
-				<Link to="/">
-					<img src={Logo} alt="Logo" className="rusted-rage-logo" width={200} />
-				</Link>
+				<div className="rusted-rage-logo-container">
+					<button
+						onClick={toggleMenu}
+						className="rusted-rage-menu-button"
+					>
+						<TfiMenuAlt size={30} />
+					</button>
+					<Link to="/">
+						<img
+							src={Logo}
+							alt="Logo"
+							className="rusted-rage-logo"
+							width={160}
+						/>
+					</Link>
+				</div>
+				{showMenu && <RustedRageMenu />}
 				<div className="rusted-rage-search">
 					<BiFilter size={30} />
 					<input type="text" autoFocus placeholder="Search movies & Tv shows" />
@@ -102,7 +137,11 @@ const RustedRageHeader = () => {
 						return (
 							<>
 								{indx === currentMovie ? (
-									<RustedRageCarouselItem key={list.id} item={list} />
+									<RustedRageCarouselItem
+										key={list.id}
+										item={list}
+										genres={allGenres[indx]}
+									/>
 								) : null}
 							</>
 						);

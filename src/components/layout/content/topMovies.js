@@ -18,7 +18,6 @@ const RustedRageTopMovies =()=>{
 
             if(data){
                 setMoviesList(data);
-                console.log(data)
                 setIsLoading(false);
             }
         }catch(error){
@@ -34,7 +33,7 @@ const RustedRageTopMovies =()=>{
             {
                 isLoading ? <RustedRageLoader /> : (
                     <>{
-                        moviesList.map((movie, indx)=> <RustedRageMovieCard index={indx} movie={movie} />)
+                        moviesList.map((movie, indx)=> <RustedRageMovieCard key={movie.id} index={indx} movie={movie} />)
                     }</>
                 )
             }
