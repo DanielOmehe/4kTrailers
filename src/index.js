@@ -7,6 +7,7 @@ import RustedRageMovies from "./components/movies";
 import RustedRageTvShows from "./components/tvshows";
 import RustedRageWatchList from "./components/watchlist";
 import RustedRageProvider from "./components/context";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
 	{
@@ -39,6 +40,7 @@ const root = createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
 		<RustedRageProvider>
+        <Toaster position="top-center" />
 			<RouterProvider router={router} />
 		</RustedRageProvider>
 	</React.StrictMode>

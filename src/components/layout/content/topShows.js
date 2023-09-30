@@ -19,7 +19,6 @@ const RustedRageTopShows = () => {
 			if (data) {
 				setShowsList(data);
 				setIsLoading(false);
-                console.log(data);
 			}
 		}catch(error){
 			console.error(error);
@@ -37,7 +36,7 @@ const RustedRageTopShows = () => {
 			) : (
 				<>
 					{showsList.map((movie, indx) => (
-						<RustedRageMovieCard index={indx} movie={movie} />
+						<RustedRageMovieCard key={movie.id} index={indx} movie={movie} />
 					))}
 				</>
 			)}

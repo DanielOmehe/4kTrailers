@@ -1,7 +1,7 @@
 @media only screen and (min-width: 1200px){
     .rusted-rage-auth{
         width: 400px;
-        height: 500px;
+        height: 550px;
         background: #070b11;
         border-radius: 20px;
         position: absolute;
@@ -10,6 +10,7 @@
         transform: translate(-50%, -50%);
         z-index: 3;
         padding: 2rem;
+        display: block;
 
         .close-form{
             position: absolute;
@@ -107,7 +108,9 @@
                 .rusted-rage-register-fields{
                     width: 100%;
                     height: auto;
-                    margin-top: 1rem;
+                    margin-top: 2rem;
+                    display: flex;
+                    flex-direction: column;
 
                     label{
                         font-size: 1.3rem;
@@ -115,16 +118,15 @@
                     }
 
                     input{
-                        width: 92%;
-                        margin-top: .8rem;
-                        padding: 1rem;
+                        padding: 1rem 1.5rem;
+                        margin-top: .5rem;
                         background: none;
-                        color: #fff;
-                        font-size: .8rem;
-                        border: 1px solid #fff;
                         border-radius: 5px;
+                        border: 1px solid #fff;
+                        color: #fff;
                         outline: none;
                         transition: border .2s linear;
+                        font-family: 'Montserrat', sans-serif;
                     }
                 }
 
