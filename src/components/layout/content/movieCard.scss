@@ -1,19 +1,26 @@
 @media only screen and (min-width: 1200px){
     .rusted-rage-movie-card{
         width: 320px;
-        height: 100%;
+        height: 90%;
         display: grid;
         grid-template-columns: 70px 1fr;
 
         h1{
             font-size: 8rem;
             font-family: "Montserrat", san-serif;
-            opacity: .1;
+            opacity: .3;
             margin-top: 10rem;
+            position: relative;
+            z-index: 3;
+            margin-left: -1rem;
+        }
+
+        h1:first-child{
+            margin-left: -.7rem;
         }
 
         .rusted-rage-movie-poster{
-            height: 100%;
+            height: 300px;
             width: 220px;
             border-radius: 5px;
             overflow: hidden;

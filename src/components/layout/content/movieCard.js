@@ -1,5 +1,6 @@
 import  './movieCard.scss';
-const RustedRageMovieCard =({ index, movie })=>{
+
+const RustedRageMovieCard =({ slide, index, movie })=>{
     return(
         <div className='rusted-rage-movie-card'>
             <h1>{index + 1}</h1>

@@ -1,44 +1,82 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import RustedRageLoader from '../../utils/loader';
-import RustedRageMovieCard from './movieCard';
+import { useContext, useState, useCallback } from "react";
+import RustedRageLoader from "../../utils/loader";
+import { Link } from "react-router-dom";
+import RustedRageMovieCard from "./movieCard";
 import "./index.scss";
+import { RustedRageContext } from "../../context";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const RustedRageTopMovies =()=>{
-    const [moviesList, setMoviesList] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+const RustedRageTopMovies = () => {
+	const { sliderRef, isLoading, moviesList } = useContext(RustedRageContext);
+	const [slideIndex, setSlideIndex] = useState(0);
+	const [slidewidth, setSlideWidth] = useState(0);
+	const [sliderPosition, setSliderPosition] = useState(0);
 
-    const api_key = "b62dddbb37d8ec434e52a02797220057";
+	const prevSlide = () => {
+		if (sliderRef.current) {
+			const slidewidth = sliderRef.current.children[slideIndex].clientWidth;
+			setSlideWidth(slidewidth);
+		}
+		if (slideIndex === 0) return;
+		setSlideIndex(slideIndex - 1);
+		setSliderPosition(sliderPosition + slidewidth);
 
-    const getTopMovies = async()=>{
-        try{
-            setIsLoading(true)
-            const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=${api_key}`);
-            const data = await response.data.results;
+		console.log(slideIndex);
+	};
 
-            if(data){
-                setMoviesList(data);
-                setIsLoading(false);
-            }
-        }catch(error){
-            console.error(error);
-        }
-    }
+	const nextSlide = useCallback(() => {
+		if (sliderRef.current) {
+			const slidewidth = sliderRef.current.children[slideIndex].clientWidth;
+			setSlideWidth(slidewidth);
+		}
+		if (slideIndex === moviesList.length - 1) {
+			return;
+		} else {
+			setSlideIndex(slideIndex + 1);
+			setSliderPosition(sliderPosition - slidewidth);
+		}
+		console.log(slideIndex);
+	}, [slidewidth, slideIndex, sliderRef, sliderPosition, moviesList]);
 
-    useEffect(()=>{
-        getTopMovies();
-    }, [])
-    return(
-        <div className="rusted-rage-top-movies-slider">
-            {
-                isLoading ? <RustedRageLoader /> : (
-                    <>{
-                        moviesList.map((movie, indx)=> <RustedRageMovieCard key={movie.id} index={indx} movie={movie} />)
-                    }</>
-                )
-            }
-        </div>
-    )
-}
+	return (
+		<>
+			<FaChevronLeft
+				size={25}
+				className="rusted-rage-slider-button"
+				onClick={prevSlide}
+			/>
+			<div
+				className="rusted-rage-top-movies-slider"
+				style={{
+					position: "relative",
+					left: `${sliderPosition}px`,
+					transition: "left .5s ease",
+				}}
+				ref={sliderRef}
+			>
+				{isLoading ? (
+					<RustedRageLoader />
+				) : (
+					<>
+						{moviesList.map((movie, indx) => (
+							<Link to={`movies/${movie.title}`}>
+								<RustedRageMovieCard
+									key={movie.id}
+									index={indx}
+									movie={movie}
+								/>
+							</Link>
+						))}
+					</>
+				)}
+			</div>
+			<FaChevronRight
+				size={25}
+				className="rusted-rage-slider-button"
+				onClick={nextSlide}
+			/>
+		</>
+	);
+};
 
-export default RustedRageTopMovies
+export default RustedRageTopMovies;

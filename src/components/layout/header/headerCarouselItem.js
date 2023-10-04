@@ -12,7 +12,7 @@ const RustedRageCarouselItem = ({ item, genres }) => {
 		<div
 			className="rusted-rage-carousel-item"
 			style={{
-				background: `linear-gradient(rgba(7, 11, 17, 0.898898989898989898989898989) 10%, rgba(7, 11, 17, 0.07), rgb(7, 11, 17, .989898989) 75%), url('https://image.tmdb.org/t/p/original${item.backdrop_path}')`,
+				background: `linear-gradient(rgba(7, 11, 17, 0.898898989898989898989898989) 10%, rgba(7, 11, 17, 0.67), rgb(7, 11, 17, .989898989) 75%), url('https://image.tmdb.org/t/p/original${item.backdrop_path}')`,
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",
 				backgroundPosition: "40% 10%",
@@ -27,7 +27,7 @@ const RustedRageCarouselItem = ({ item, genres }) => {
 					</div>
 					<p>{item.release_date}</p>
 					<div className="rusted-rage-movie-genres">
-						{genres.map((genre) => genre.map(({ name }) => <p>{name}</p>))}
+						{genres.map((genre) => genre.map(({ name }) => <p key={name}>{name}</p>))}
 					</div>
 				</div>
 				<p className="rusted-rage-overview">{item.overview}</p>
