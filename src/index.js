@@ -27,11 +27,11 @@ const router = createBrowserRouter([
 		element: <RustedRageWatchList />,
 	},
 	{
-		path: "/shows/:movie-name",
+		path: "shows/:movie-name",
 		element: <h1>This is the Movie Info Page</h1>,
 	},
 	{
-		path: "/shows/:show-name",
+		path: "shows/:show-name",
 		element: <h1>This is the Tv Shows Info Page</h1>,
 	},
 ]);

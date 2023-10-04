@@ -6,7 +6,6 @@ const RustedRageFooter = () => {
 		<footer className="rusted-rage-footer">
 			<div className="rusted-rage-footer-container">
 				<ul className="rusted-rage-footer-items">
-					<Link to={"/"}>Home</Link>
 					<Link to={"/"}>Movies</Link>
 					<Link to={"/"}>Tv Shows</Link>
 					<Link to={"/"}>Trending</Link>

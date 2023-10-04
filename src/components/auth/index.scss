@@ -30,7 +30,7 @@
             .rusted-rage-tabs{
                 width: 100%;
                 padding: .8rem 0;
-                font-family: 'Fraunces', sans-serif;
+                font-family: 'Montserrat', sans-serif;
                 font-weight: 500;
                 cursor: pointer;
             }
@@ -39,10 +39,10 @@
                 width: 100%;
                 padding: .8rem 0;
                 cursor: pointer;
-                font-family: 'Fraunces', sans-serif;
+                font-family: 'Montserrat', sans-serif;
                 font-weight: 500;
                 background: rgba(0,0,0,.09);
-                border-bottom: 5px solid #009200;
+                border-bottom: 5px solid #ffc107;
             }
         }   
 
@@ -82,7 +82,7 @@
                     }
 
                     input:focus{
-                        border: 1px solid #fd7e14;
+                        border: 1px solid #ffc107;
                     }
                 }
 
@@ -92,7 +92,7 @@
                     margin: 3rem auto;
                     cursor: pointer;
                     border-radius: 5px;
-                    background-color: #fd7e14;
+                    background-color: #ffc107;
                     border: none;
                     font-size: 1rem;
                     font-family: 'Montserrat', sans-serif;
@@ -128,6 +128,10 @@
                         transition: border .2s linear;
                         font-family: 'Montserrat', sans-serif;
                     }
+
+                    input:focus{
+                        border: 1px solid #ffc107;
+                    }
                 }
 
                 .rusted-rage-register-fields:nth-child(1){
@@ -141,7 +145,7 @@
                     margin-top: 1.5rem;
                     font-size: 1rem;
                     cursor: pointer;
-                    background-color: #fd7e14;
+                    background-color: #ffc107;
                     border: none;
                     border-radius: 5px;
                     outline: none;

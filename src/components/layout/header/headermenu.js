@@ -1,14 +1,10 @@
 import { Link } from "react-router-dom";
 import "./headerMenu.scss";
-import { TbTrendingUp, TbHome2, TbMovie, TbListDetails } from "react-icons/tb";
+import { TbTrendingUp, TbMovie, TbListDetails } from "react-icons/tb";
 
 const RustedRageMenu = () => {
 	return (
 		<div className="rusted-rage-menu">
-			<Link to={"/"}>
-				<TbHome2 size={25} color="#fff" />
-				<p>Home</p>
-			</Link>
 			<Link to={"/movies"}>
 				<TbMovie size={25} color="#fff" />
 				<p>Movies</p>
