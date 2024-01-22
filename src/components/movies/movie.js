@@ -1,5 +1,7 @@
-const RustedRageMovieInfo =()=>(
-    <h1>This is the movie info page</h1>
-)
+const RustedRageMovies = () => (
+	<>
+		<section className="rusted-rage-movies-page"></section>
+	</>
+);
 
-export default RustedRageMovieInfo
+export default RustedRageMovies;

@@ -1,4 +1,4 @@
-import Logo from "../../../rusted.png";
+import Logo from "../../../../trailers.png";
 import { Link } from "react-router-dom";
 import "./discover.scss";
 

@@ -27,7 +27,7 @@ const router = createBrowserRouter([
 		element: <RustedRageWatchList />,
 	},
 	{
-		path: "shows/:movie-name",
+		path: "movies/:movie-name",
 		element: <h1>This is the Movie Info Page</h1>,
 	},
 	{
@@ -40,7 +40,7 @@ const root = createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
 		<RustedRageProvider>
-        <Toaster position="top-center" />
+			<Toaster position="top-center" />
 			<RouterProvider router={router} />
 		</RustedRageProvider>
 	</React.StrictMode>

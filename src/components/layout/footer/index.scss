@@ -1,4 +1,3 @@
-@media only screen and (min-width: 1200px){
     .rusted-rage-footer{
         width: 100%;
         position: sticky;
@@ -27,7 +26,6 @@
                 a{
                     text-decoration: none;
                     font-size: 1rem;
-                    font-family: 'Montserrat', sans-serif;
                     font-weight: 500;
                     color: darkgrey;
                 }
@@ -36,9 +34,7 @@
             p{
                 padding: .5rem 10rem;
                 font-size: 1rem;
-                font-family: 'Montserrat', sans-serif;
                 color: grey;
             }
         }
     }
-}

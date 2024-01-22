@@ -1,15 +1,17 @@
-import { createContext, useState, useEffect, useRef } from "react";
+import { createContext, useState, useContext, useEffect, useRef } from "react";
 import axios from "axios";
 
-export const RustedRageContext = createContext();
+const RustedRageContext = createContext();
+
+export const useRustedRageContext = () => useContext(RustedRageContext);
 
 const RustedRageProvider = ({ children }) => {
 
-	const sliderRef = useRef();
 	const [showForm, setShowFormForm] = useState(false);
 	const [moviesList, setMoviesList] = useState([]);
 	const [showsList, setShowsList] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
+    const [ currentTabName, setCurrentTabName ] = useState();
 
 	const api_key = "b62dddbb37d8ec434e52a02797220057";
 
@@ -56,16 +58,21 @@ const RustedRageProvider = ({ children }) => {
 	const show = () => setShowFormForm(true);
 	const hide = () => setShowFormForm(false);
 
+    const switchTab =(name)=> {
+        setCurrentTabName(name)
+    };
+
 	return (
 		<RustedRageContext.Provider
 			value={{
 				showForm,
 				show,
 				hide,
-				sliderRef,
 				moviesList,
 				showsList,
 				isLoading,
+                currentTabName,
+                switchTab
 			}}
 		>
 			{children}

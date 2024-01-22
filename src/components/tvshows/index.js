@@ -1,6 +1,9 @@
-const RustedRageTvShows =()=>(
-    <div>
-    this is the tv shows page</div>
-)
+import RustedRageNavBar from "../utils/navbar";
 
-export default RustedRageTvShows
+const RustedRageTvShows = () => (
+	<>
+		<RustedRageNavBar />
+	</>
+);
+
+export default RustedRageTvShows;

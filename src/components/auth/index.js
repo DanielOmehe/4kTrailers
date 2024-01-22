@@ -1,20 +1,20 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import { RustedRageContext } from "../context";
 import RustedRageAuthTabs from "./register";
 import RustedRageLoginForm from "./login";
 import RustedRageSignUpForm from "./signup";
 import "./index.scss";
+import { useRustedRageContext } from '../context'
 
 const data = [
 	{ id: 1, name: "Login" },
-	{ id: 1, name: "Register" },
+	{ id: 1, name: "Sign Up" },
 ];
 
 const RustedRageAuth = () => {
 	const [currentTab, setCurrentTab] = useState(data[0].name);
 
-	const { showForm, hide } = useContext(RustedRageContext);
+	const { showForm, hide } = useRustedRageContext();
 
 	const switchTabs = (tabName) => {
 		setCurrentTab(tabName);
