@@ -1,0 +1,77 @@
+.movies-card{
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    overflow: hidden;
+    background: #343434;
+    position: relative;
+    transition: all .2s linear;
+
+    .movie-control-btns{
+        display: none;
+    }
+
+    &:hover{
+
+        .movie-control-btns{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.67));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            transition: all .3s ease;
+        
+            .play-btn{
+                background: #ffc107;
+            }
+        
+            button{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: none;
+                outline: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: slide-in .3s ease;
+            }
+        } 
+    }
+
+    .movie-poster{
+        width: 100%;
+        height: 100%;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: center;
+            object-position: center;
+        }
+    }
+
+    .media-and-rating{
+        position: absolute;
+        top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@keyframes slide-in{
+    from{
+        display: none;
+        transform: translateY(10px);
+    }
+    to{
+        display: block;
+        transform: translateY(0px);
+    }
+}

@@ -71,3 +71,33 @@ body {
   background: #070b11;
 }
 
+.page-not-found{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    h1{
+        font-size: 15rem;
+        font-weight: 800;
+    }
+
+    p{
+        font-size: 2rem;
+    }
+
+    button{
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        background: #007bff;
+        border: none;
+        border-radius: .5rem;
+
+        a{
+            text-decoration: none;
+        }
+    }
+}

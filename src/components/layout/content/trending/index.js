@@ -1,13 +1,12 @@
 import "./index.scss";
 import { useRustedRageContext } from "../../../context";
 import TrendingTabWrapper from "./trending";
-import TrendingMoviesTab from "./trendingMovies";
-import TrendingTvShowsTab from "./trendingShows";
+import TrendingTab from "./trendingTab";
 
 const tabs = [{ name: "Movies" }, { name: "TV Series" }];
 
 const TrendingMovies = () => {
-	const { currentTabIndx, switchTab } = useRustedRageContext();
+	const { currentTabIndx, switchTab, movies, shows } = useRustedRageContext();
 	return (
 		<section className="trending-movies-and-series">
 			<div className="trending-movies-header">
@@ -15,7 +14,7 @@ const TrendingMovies = () => {
 				<ul className="trending-movies-tabs">
 					{tabs.map((tab, indx) => (
 						<li
-							onClick={() => switchTab(tab.name.toLowerCase())}
+							onClick={() => switchTab(indx)}
 							className={indx === currentTabIndx ? "active-tab" : ""}
 						>
 							{tab.name}
@@ -25,8 +24,8 @@ const TrendingMovies = () => {
 			</div>
 			{/* create a container for the tabs and write logic for switching tabs */}
 			<TrendingTabWrapper>
-				<TrendingMoviesTab tabKey="movies" />
-				<TrendingTvShowsTab tabKey="tvshows" />
+				<TrendingTab movies={movies} />
+				<TrendingTab movies={shows} />
 			</TrendingTabWrapper>
 		</section>
 	);

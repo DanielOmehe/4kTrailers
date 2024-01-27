@@ -8,11 +8,14 @@ import RustedRageTvShows from "./components/tvshows";
 import RustedRageWatchList from "./components/watchlist";
 import RustedRageProvider from "./components/context";
 import { Toaster } from "react-hot-toast";
+import PageNotFound from './error-page'
+import MoviesInfoPage from "./components/utils/movieInfo";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <RustedRageHomepage />,
+        errorElement: <PageNotFound />,
 	},
 	{
 		path: "movies",
@@ -27,12 +30,14 @@ const router = createBrowserRouter([
 		element: <RustedRageWatchList />,
 	},
 	{
-		path: "movies/:movie-name",
-		element: <h1>This is the Movie Info Page</h1>,
+		path: "movies/:movieName",
+		element: <MoviesInfoPage />,
+        errorElement: <PageNotFound />,
 	},
 	{
-		path: "shows/:show-name",
+		path: "shows/:showName",
 		element: <h1>This is the Tv Shows Info Page</h1>,
+        errorElement: <PageNotFound />,
 	},
 ]);
 

@@ -64,7 +64,7 @@ const RustedRageHeader = () => {
 							autoFocus
 						/>
 						<button>
-							<FaSearch size={25} />
+							<FaSearch size={20} />
 						</button>
 					</div>
 				</div>

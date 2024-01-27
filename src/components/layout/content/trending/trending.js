@@ -3,9 +3,9 @@ import { useRustedRageContext } from "../../../context"
 
 const TrendingTabWrapper =({ children })=>{
 
-    const { currentTabName } = useRustedRageContext();
+    const { currentTabIndx } = useRustedRageContext();
     return(
-        <section>{Children.count(children)}</section>
+        <section>{Children.map(children, (child, indx) => indx === currentTabIndx ? child : null)}</section>
     )
 }
 

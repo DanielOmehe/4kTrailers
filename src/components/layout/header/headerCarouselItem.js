@@ -9,6 +9,7 @@ const RustedRageCarouselItem = ({ movie }) => {
 				src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
 				alt={movie.title}
 			/>
+            <div className='carousel-gradient'></div>
 			<div className="movie-info">
 				<img
 					src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
