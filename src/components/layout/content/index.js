@@ -1,14 +1,15 @@
 import "./index.scss";
 import TrendingMovies from "./trending";
-import LatestMovies from "./latest/latestMovies";
-import LatestShows from "./latest/latestShow";
+import LatestMoviesNdTv from "./latest";
+import { useRustedRageContext } from "../../context";
 
 const RustedRageContent = () => {
+	const { latestMovies, latestShows } = useRustedRageContext();
 	return (
 		<main className="rusted-rage-content">
 			<TrendingMovies />
-            <LatestMovies />
-            <LatestShows />
+			<LatestMoviesNdTv name={"Latest Movies"} movies={latestMovies} />
+			<LatestMoviesNdTv name={"Latest Shows"} movies={latestShows} />
 		</main>
 	);
 };

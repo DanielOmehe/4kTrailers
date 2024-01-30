@@ -63,12 +63,9 @@
 }
 
 body {
-    width: 100vw;
-    overflow-x: hidden;
     margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #070b11;
+    background: #070b11;
+    container-type: inline-size;
 }
 
 .page-not-found{

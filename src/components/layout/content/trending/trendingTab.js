@@ -1,4 +1,4 @@
-import MoviesCard from "../../../utils/cards/movieCard";
+import MoviesCard from "../../../utils/cards";
 
 const TrendingTab = ({ movies }) => {
 	return (

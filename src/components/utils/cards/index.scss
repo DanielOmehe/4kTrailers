@@ -62,6 +62,34 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        width: 100%;
+        padding: 0 .4rem;
+
+        .media-type{
+            padding: .2rem .3rem;
+            background: #fff;
+            border-radius: .2rem;
+
+            p{
+                color: #343434;
+            }
+        }
+        
+        .movie-rating{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            padding: .4rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: relative;
+
+            p{
+                color: #343434;
+            }
+  
+        }
     }
 }
 

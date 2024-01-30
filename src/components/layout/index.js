@@ -1,6 +1,6 @@
 import RustedRageHeader from "./header";
 import RustedRageContent from "./content";
-import RustedRageFooter from "./footer";
+import RustedRageFooter from "../utils/footer";
 
 const RustedRageHomepage =()=>(
     <>

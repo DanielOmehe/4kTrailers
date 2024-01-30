@@ -1,128 +1,19 @@
+.rusted-rage-content{
+    width: 100%;
+    padding: 0 2.5rem;
+
+    h1{
+        font-size: 3rem;
+        padding-right: 30rem;
+        color: #fff;
+    }    
+}
+
+@media only screen and (max-width: 1200px){
     .rusted-rage-content{
         width: 100%;
-        padding: 0 2.5rem;
-
-        h1{
-            font-size: 3rem;
-            padding-right: 30rem;
-            color: #fff;
-        }
-
-        .rusted-rage-top-movies{
-            margin-top: 5rem;
-            width: auto;
-            height: 300px;
-            gap: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .rusted-rage-top-movies-title{
-                height: 100%;
-                width: 22%;
-                padding: 2rem 1rem;
-
-                h2{
-                    font-size: 1.5rem;
-                    margin-bottom: 2rem;
-                }
-
-                p{
-                    font-size: 1.2rem;
-                }
-            }
-
-            .rusted-rage-top-ten{
-                width: 78%;
-                height: 350px;
-                overflow-x: hidden;
-                position: relative;
-
-                .rusted-rage-slider-button{
-                    position: absolute;
-                    top: 35%;
-                    z-index: 3;
-                    opacity: .3;
-                    cursor: pointer;
-                }
-
-                .rusted-rage-slider-button:hover{
-                    opacity: 1;
-                }
-
-                .rusted-rage-slider-button:last-child{
-                    left: 93%;
-                }
-                
-                .rusted-rage-top-movies-slider{
-                    height: 100%;
-                    width: fit-content;
-                    display: flex;
-                    gap: 1rem;
-
-                    a{
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
-
-        .rusted-rage-top-shows{
-            margin-top: 10rem;
-            width: auto;
-            height: 300px;
-            gap: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .rusted-rage-top-shows-title{
-                height: 100%;
-                width: 22%;
-                padding: 2rem 1rem;
-
-                h2{
-                    font-size: 1.5rem;
-                    margin-bottom: 2rem;
-                }
-
-                p{
-                    font-size: 1.2rem;
-                }
-            }
-
-            .rusted-rage-top-ten{
-                width: 78%;
-                height: 350px;
-                overflow-x: hidden;
-                position: relative;
-
-                .rusted-rage-slider-button{
-                    position: absolute;
-                    top: 45%;
-                    z-index: 3;
-                    opacity: .3;
-                    cursor: pointer;
-                }
-
-                .rusted-rage-slider-button:hover{
-                    opacity: 1;
-                }
-
-                .rusted-rage-slider-button:last-child{
-                    left: 93%;
-                }
-
-                .rusted-rage-top-shows-slider{
-                    height: 100%;
-                    width: fit-content;
-                    display: flex;
-                    gap: 1rem;
-
-                    a{
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
+        height: fit-content;
+        padding: 0;
+        margin-top: 2rem;
     }
+}
