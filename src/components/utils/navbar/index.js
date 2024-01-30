@@ -7,7 +7,7 @@ import HamBurgerMenu from "../../../hamburger-menu.svg";
 import { useRustedRageContext } from "../../context";
 
 const RustedRageNavBar = () => {
-	const { showMenu, toggleMenu } = useRustedRageContext();
+	const { toggleMenu } = useRustedRageContext();
 	return (
 		<>
 			<nav className="rusted-rage-navbar">
@@ -27,13 +27,7 @@ const RustedRageNavBar = () => {
 					</div>
 				</div>
 				<div className="menu-item-nd-controls">
-					<ul
-						className={
-							showMenu
-								? "rusted-rage-navItems open-menu"
-								: "rusted-rage-navItems"
-						}
-					>
+					<ul className="rusted-rage-navItems">
 						<li>
 							<Link to={"/movies"}>Movies</Link>
 						</li>
