@@ -43,10 +43,10 @@ const router = createBrowserRouter([
 
 const root = createRoot(document.getElementById("root"));
 root.render(
-	<React.StrictMode>
-		<RustedRageProvider>
-			<Toaster position="top-center" />
-			<RouterProvider router={router} />
-		</RustedRageProvider>
-	</React.StrictMode>
+    <React.StrictMode>
+    <RustedRageProvider>
+    <Toaster position="top-center" />
+    <RouterProvider router={router} />
+</RustedRageProvider>
+    </React.StrictMode>
 );
