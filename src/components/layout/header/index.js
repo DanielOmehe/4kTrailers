@@ -7,10 +7,13 @@ import axios from "axios";
 import RustedRageCarousel from "./headerCarousel";
 import RustedRageCarouselItem from "./headerCarouselItem";
 import RustedRageNavBar from "../../utils/navbar";
+import MobileMenu from "../../utils/navbar/mobile_menu";
+import { useRustedRageContext } from "../../context";
 
 const RustedRageHeader = () => {
 	const [movieList, setMovieList] = useState([]);
 	const [currentMovie, setCurrentMovie] = useState(0);
+    const { showMenu } = useRustedRageContext()
 
 	const api_key = "b62dddbb37d8ec434e52a02797220057";
 
@@ -50,6 +53,7 @@ const RustedRageHeader = () => {
 	return (
 		<header className="rusted-rage-header">
 			<RustedRageNavBar />
+            <>{showMenu ? <MobileMenu /> : null}</>
 			<section className="rusted-rage-carousel-container">
 				<div className="rusted-rage-container-hero">
 					<div className="hero-header">
