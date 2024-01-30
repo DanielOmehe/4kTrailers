@@ -1,48 +1,35 @@
 import "./headerCarouselItem.scss";
-import { BsStar } from "react-icons/bs";
-import { AiOutlinePlayCircle } from "react-icons/ai";
-import { MdFavoriteBorder } from "react-icons/md";
+import { FaStar } from "react-icons/fa";
 
-const RustedRageCarouselItem = ({ item, genres }) => {
-	let classes = ["rusted-rage-carousel-item"];
-	if (item) {
-		classes.push("active");
-	}
+const RustedRageCarouselItem = ({ movie }) => {
+    const { backdrop_path, poster_path, title, overview, vote_average, release_date } = movie
 	return (
-		<div
-			className="rusted-rage-carousel-item"
-			style={{
-				background: `linear-gradient(rgba(7, 11, 17, 0.898898989898989898989898989) 10%, rgba(7, 11, 17, 0.67), rgb(7, 11, 17, .989898989) 75%), url('https://image.tmdb.org/t/p/original${item.backdrop_path}')`,
-				backgroundRepeat: "no-repeat",
-				backgroundSize: "cover",
-				backgroundPosition: "40% 10%",
-			}}
-		>
-			<div className="rusted-rage-carousel-info-container">
-				<h1>{item.title}</h1>
-				<div className="rusted-rage-carousel-info">
-					<div className="rusted-rage-ratings">
-						<BsStar />
-						<p>{item.vote_average}</p>
+		<section className="rusted-rage-carousel-item">
+			<img
+				className="carousel-item-backdrop"
+				src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
+				alt={title}
+			/>
+            <div className='carousel-gradient'></div>
+			<div className="movie-info">
+				<img
+					src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+					alt={title}
+				/>
+				<div className="movie-info-text">
+					<h3>
+						{title.slice(0, 20)}
+						{title.length > 25 ? "..." : ""}
+					</h3>
+					<div>
+						<FaStar fill="yellow" size={20} />
+						<p>{vote_average}</p>
+						<p>{release_date}</p>
 					</div>
-					<p>{item.release_date}</p>
-					<div className="rusted-rage-movie-genres">
-						{genres.map((genre) => genre.map(({ name }) => <p key={name}>{name}</p>))}
-					</div>
-				</div>
-				<p className="rusted-rage-overview">{item.overview}</p>
-				<div className="rusted-rage-controls">
-					<button className="watch-now">
-						<p>Watch Now</p>
-						<AiOutlinePlayCircle size={20} />
-					</button>
-					<button className="add-to-watchlist">
-						<p>Add to WatchList</p>
-						<MdFavoriteBorder size={20} />
-					</button>
+                    <span className='overview'>{overview}</span>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

@@ -1,9 +1,7 @@
-@media only screen and (min-width: 1024px){
-    .rusted-rage-carousel{
-        width: fit-content;
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(10, 100vw);
-        gap: 0;
-    }
+.rusted-rage-carousel{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 100vw);
+    gap: 0;
 }

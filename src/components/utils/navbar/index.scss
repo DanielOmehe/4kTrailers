@@ -1,0 +1,247 @@
+.rusted-rage-navbar{
+    width: 100%;
+    height: 70px;
+    padding: 0 2.4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #007bff;
+
+    .menu-nd-logo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+
+        .hamburger-menu{
+            display: none;
+        }
+        
+        .rusted-rage-logo-container{
+            height: 100%;
+            background: #000;
+            padding: 2rem 1rem;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .menu-item-nd-controls{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .rusted-rage-navItems{
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            gap: 3.5rem;
+            margin-left: 5rem;
+        
+            li{
+                list-style: none;
+            }
+        
+            a{
+                color: #fff;
+                font-size: 1.2rem;
+                text-decoration: none;
+            }
+        }
+
+        .control-btns{
+            margin-left: 25rem;
+            padding: .8rem 2rem;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 2rem;
+        
+            .rusted-rage-search-btn, .rusted-rage-register-btn{
+                font-size: 1.2rem;
+                font-weight: 500;
+                cursor: pointer;
+                background: none;
+                display: flex;
+                gap: .5rem;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+    
+    .rusted-rage-search{
+        margin-left: 15rem;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .8rem;
+        background: #070b11;
+        opacity: .95;
+        color: black;
+        padding: .4rem 1rem;
+        border-radius: 10px;
+    
+        input{
+            width: 400px;
+            border: none;
+            outline: none;
+            background: none;
+            border: none;
+        }
+    
+        input::placeholder{
+            color: grey;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1200px){
+    .rusted-rage-navbar{
+        width: 100%;
+        height: 80px;
+        padding: 0;
+        gap: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        background: #007bff;
+
+        .menu-nd-logo{
+            flex: 1;
+            .hamburger-menu{
+                display: none;
+            }
+
+            .rusted-rage-logo-container{
+                width: 200px;
+                height: 100%;
+                margin: 0;
+                background: #070b11;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 .8rem;
+
+            .rusted-rage-logo{
+                width: 100%;
+                height: 300%;
+            }
+        }
+        }
+
+        .menu-item-nd-controls{
+            height: 100%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            flex: 3;
+
+            .rusted-rage-navItems{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 2rem;
+                height: 100%;
+                margin: 0;
+                list-style: none;
+
+                li a{
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                }
+            }
+
+            .control-btns{
+                gap: 3rem;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                height: 100%;
+            
+                .rusted-rage-search-btn, .rusted-rage-register-btn{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: .7rem;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .rusted-rage-navbar{
+        height: 60px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .menu-nd-logo{
+            .hamburger-menu{
+                display: block;
+                height: 100%;
+                width: 60px; 
+                margin: 0;
+                cursor: pointer;
+    
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+    
+            .rusted-rage-logo-container{
+                .rusted-rage-logo{
+                    width: 200px;
+                }
+            }
+        }
+
+        .menu-item-nd-controls{
+            flex: 3;
+            justify-content: flex-end;
+            
+            .rusted-rage-navItems{
+                display: none;
+            }
+    
+            .control-btns{
+                margin-right: 0rem;
+                gap: 1rem;
+    
+                .rusted-rage-search-btn, .rusted-rage-register-btn{
+                    p{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .rusted-rage-navbar{
+        height: 50px;
+    }
+}

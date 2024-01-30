@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Bellefair&family=Hanken+Grotesk:wght@500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 // #070b11
 // --lt-color-gray-100: #f8f9fc;
@@ -59,24 +57,44 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Fraunces', sans-serif;
+    font-family: 'Bellefair', sans-serif;
     box-sizing: border-box;
     color: #fff;
 }
 
 body {
-    width: 100vw;
-    overflow-x: hidden;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #070b11;
+    margin: 0;
+    background: #070b11;
+    container-type: inline-size;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.page-not-found{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    h1{
+        font-size: 15rem;
+        font-weight: 800;
+    }
+
+    p{
+        font-size: 2rem;
+    }
+
+    button{
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        background: #007bff;
+        border: none;
+        border-radius: .5rem;
+
+        a{
+            text-decoration: none;
+        }
+    }
 }
