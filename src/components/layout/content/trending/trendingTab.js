@@ -11,7 +11,7 @@ const TrendingTab = ({ movies }) => {
 			) : (
 				<>
 					{movies.map((movie, indx) => (
-						<MoviesCard key={movie.title} indx={indx} movie={movie} />
+						<MoviesCard key={movie.id.toString()} movie={movie} />
 					))}
 				</>
 			)}

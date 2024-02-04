@@ -5,7 +5,7 @@ import { FaPlay } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
 
 const MoviesCard = ({ movie }) => {
-	const { vote_average, title, name, poster_path, media_type } = movie;
+	const { id, vote_average, title, name, poster_path, media_type } = movie;
 	const total_vote_percentage = Math.floor((vote_average / 10) * 100);
 	let color =
 		total_vote_percentage > 80
@@ -14,7 +14,7 @@ const MoviesCard = ({ movie }) => {
 			? "yellow"
 			: "red";
 	return (
-		<Link to={`movies/${title ? title : name}`}>
+		<Link to={`movies/${id}/${title ? title : name}`}>
 			{" "}
 			<div className="movies-card">
 				<div className="movie-poster">

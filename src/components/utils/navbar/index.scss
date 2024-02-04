@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,6 +36,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex: 3;
 
         .rusted-rage-navItems{
             display: flex;
@@ -65,6 +66,10 @@
             align-items: center;
             justify-content: flex-start;
             gap: 2rem;
+
+            a{
+                text-decoration: none;
+            }
         
             .rusted-rage-search-btn, .rusted-rage-register-btn{
                 font-size: 1.2rem;
@@ -181,6 +186,7 @@
                     outline: none;
                     font-size: 1.2rem;
                     cursor: pointer;
+                    text-decoration: none;
                 }
             }
         }
@@ -243,5 +249,48 @@
 @media only screen and (max-width: 600px){
     .rusted-rage-navbar{
         height: 50px;
+
+        .menu-nd-logo{
+            .hamburger-menu{
+                display: block;
+                height: 100%;
+                width: 45px; 
+                margin: 0;
+                padding: 0;
+                cursor: pointer;
+    
+                img{
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+    
+            .rusted-rage-logo-container{
+                width: 150px;
+                padding: 0;
+                .rusted-rage-logo{
+                    width: 100%;
+                }
+            }
+        }
+
+        .menu-item-nd-controls{
+            padding: 0;
+            
+            .rusted-rage-navItems{
+                display: none;
+            }
+    
+            .control-btns{
+                gap: 1rem;
+                margin-left: 8.6rem;
+    
+                .rusted-rage-search-btn, .rusted-rage-register-btn{
+                    p{
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }

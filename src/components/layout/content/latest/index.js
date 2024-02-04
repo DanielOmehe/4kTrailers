@@ -8,7 +8,7 @@ const LatestMoviesNdTv =({ name, movies })=>{
             <h1>{name}</h1>
             <div className="latest-movies-container">
                 {
-                    movies.map((movie) => <MoviesCard movie={movie} />)
+                    movies.map((movie) => <MoviesCard key={movie.id.toString()} movie={movie} />)
                 }
             </div>
             <ShowMore route={'movies'} />
