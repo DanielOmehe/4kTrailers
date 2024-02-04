@@ -77,7 +77,7 @@ const RustedRageHeader = () => {
 						return (
 							<>
 								{indx === currentMovie ? (
-									<RustedRageCarouselItem key={movie.id} movie={movie} />
+									<RustedRageCarouselItem key={movie.id.toString()} movie={movie} />
 								) : null}
 							</>
 						);

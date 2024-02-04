@@ -379,6 +379,37 @@
     }
 }
 
+@media only screen and (max-width: 500px){
+    .rusted-rage-header{
+        width: 100%;
+        height: 45vh;
+
+        .rusted-rage-carousel-container{
+            margin: 0;
+            .rusted-rage-carousel-item{
+                .carousel-item-backdrop{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                }
+
+                .movie-info{
+                    top: 13.8rem;
+                    height: 80px;
+                    padding: .5rem;
+
+                    .movie-info-text{
+                        .overview{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 400px){
     .rusted-rage-header{
         width: 100%;

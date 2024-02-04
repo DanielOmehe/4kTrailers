@@ -162,9 +162,6 @@ const RustedRageProvider = ({ children }) => {
       ];
 	const api_key = "b62dddbb37d8ec434e52a02797220057";
 
-    console.log(movieGenres);
-    console.log(showGenres);
-
 	useEffect(() => {
 		const getMovieData = async (url, updater) => {
 			try {
