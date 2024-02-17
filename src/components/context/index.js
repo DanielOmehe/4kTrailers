@@ -12,9 +12,12 @@ const RustedRageProvider = ({ children }) => {
 	const [shows, setShows] = useState([]);
 	const [latestMovies, setLatestMovies] = useState([]);
 	const [latestShows, setLatestShows] = useState([]);
-    const [showMenu, setShowMenu ] = useState(false)
+    const [showMenu, setShowMenu ] = useState(false);
+    const [showCarousel, setShowCarousel] = useState(false)
 
     const toggleMenu =()=> setShowMenu(prev => !prev);
+    const openCarousel =()=> setShowCarousel(true);
+    const closeCarousel =()=> setShowCarousel(false);
 
 	const movieGenres = [
     {
@@ -215,6 +218,9 @@ const RustedRageProvider = ({ children }) => {
 				switchTab,
 				movieGenres,
 				showGenres,
+                showCarousel,
+                openCarousel,
+                closeCarousel
 			}}
 		>
 			{children}

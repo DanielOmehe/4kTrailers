@@ -1,51 +1,51 @@
-import { useState } from "react";
-import { FaTimes } from "react-icons/fa";
-import RustedRageAuthTabs from "./register";
-import RustedRageLoginForm from "./login";
-import RustedRageSignUpForm from "./signup";
 import "./index.scss";
-import { useRustedRageContext } from '../context'
+import RustedRageNavBar from "../utils/navbar";
+import RustedRageFooter from "../utils/footer";
+import { useNavigate } from "react-router";
+import Button from "../utils/button";
+import { Link } from "react-router-dom";
+import { createClient } from "@supabase/supabase-js";
+import LoginForm from "./loginForm";
+import SignUpForm from "./signUpForm";
 
-const data = [
-	{ id: 1, name: "Login" },
-	{ id: 1, name: "Sign Up" },
-];
+// const supabase = createClient(
+// 	"https://<project>.supabase.co",
+// 	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ0ZWlidmZkeGhwZ3ZjbW11cHZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDcyNzQ3NTMsImV4cCI6MjAyMjg1MDc1M30.SK3LKkQqW1chlExl_cd6sQ-z5N9IM_ijN0SzBKZgGNA"
+// );
 
-const RustedRageAuth = () => {
-	const [currentTab, setCurrentTab] = useState(data[0].name);
+const AuthUser = ({ name }) => {
+	const navigate = useNavigate();
+	// const signUpNewUser = async () => {
+	// 	const { data, error } = await supabase.auth.signUp({
+	// 		email: "example@email.com",
+	// 		password: "example-password",
+	// 		options: {
+	// 			emailRedirectTo: "https://example.com/welcome",
+	// 		},
+	// 	});
+	// };
+	// async function signInWithEmail() {
+	// 	const { data, error } = await supabase.auth.signInWithPassword({
+	// 		email: "example@email.com",
+	// 		password: "example-password",
+	// 	});
+	// }
 
-	const { showForm, hide } = useRustedRageContext();
-
-	const switchTabs = (tabName) => {
-		setCurrentTab(tabName);
-	};
 	return (
-		<div
-			className="rusted-rage-auth"
-			style={{ top: `${showForm ? "50%" : "-100%"}` }}
-		>
-			<FaTimes size={20} className="close-form" onClick={hide} />
-			<div className="rusted-rage-auth-nav">
-				{data.map((data) => (
-					<div
-						className={
-							data.name === currentTab
-								? "active rusted-rage-tabs"
-								: "rusted-rage-tabs"
-						}
-						onClick={() => switchTabs((currenTab) => data.name)}
-						key={data.name}
-					>
-						{data.name}
-					</div>
-				))}
-			</div>
-			<RustedRageAuthTabs currentTab={currentTab}>
-				<RustedRageLoginForm tabkey="Login" />
-				<RustedRageSignUpForm tabkey="Register" />
-			</RustedRageAuthTabs>
-		</div>
+		<>
+			<RustedRageNavBar />
+			<main className="auth-user-page">
+				<Button click={() => navigate("/")} name={"back-to-home"}>
+					Back to home
+				</Button>
+				<section className="auth-user-form-container">
+					<h1>{name}</h1>
+					<>{name === "Login" ? <LoginForm /> : <SignUpForm />}</>
+				</section>
+			</main>
+			<RustedRageFooter />
+		</>
 	);
 };
 
-export default RustedRageAuth;
+export default AuthUser;

@@ -43,7 +43,7 @@ const RustedRageNavBar = () => {
 							<FaSearch size={20} />
 							<p>Search</p>
 						</Link>
-						<Link to={'/register'} className="rusted-rage-register-btn">
+						<Link to={'/login'} className="rusted-rage-register-btn">
 							<RxAvatar size={25} />
 							<p>Login</p>
 						</Link>

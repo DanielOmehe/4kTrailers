@@ -6,13 +6,19 @@ import { useNavigate } from "react-router-dom";
 import RustedRageNavBar from "../navbar";
 import RustedRageFooter from "../footer";
 import { FaStar, FaPlay } from "react-icons/fa6";
+import MovieVideoContainer from "../video";
+import { useRustedRageContext } from "../../context";
+import RecommendedMovies from "../recommended";
+import Button from "../button";
 
 const MovieInfoPage = () => {
 	const [movieData, setMovieData] = useState([]);
-	const [trailers, setTrailers] = useState();
+	const [videos, setVideos] = useState();
 	const { movieId } = useParams();
 	const navigate = useNavigate();
 	const api_key = "b62dddbb37d8ec434e52a02797220057";
+	const { openCarousel, showCarousel } = useRustedRageContext();
+    console.log(movieId);
 
 	const {
 		poster_path,
@@ -35,26 +41,36 @@ const MovieInfoPage = () => {
 				const response = await axios.get(url);
 				const data = await response.data;
 				setMovieData(data);
-				const trailerArray = data.videos.results.filter(
-					(trailer) => trailer.name === "Official Trailer"
-				);
-				setTrailers(trailerArray);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+
+		const getMovieVideos = async (url) => {
+			try {
+				const response = await axios.get(url);
+				const data = await response.data;
+				setVideos(data.results.filter((data) => data.type === "Trailer"));
 			} catch (error) {
 				console.log(error);
 			}
 		};
 
 		getMovieData(
-			`https://api.themoviedb.org/3/movie/${movieId}?append_to_response=videos&language=en-US&api_key=${api_key}`
+			`https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=${api_key}`
 		);
-	}, [movieId, movieData, trailers]);
+		getMovieVideos(
+			`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US&api_key=${api_key}`
+		);
+	}, [movieId, movieData, videos]);
 	return (
 		<>
 			<RustedRageNavBar />
+			<>{showCarousel ? <MovieVideoContainer videos={videos} /> : null}</>
 			<main className="movie-info-page">
-				<button onClick={() => navigate(-1)} className="back-to-home">
+				<Button name={"back-to-home"} click={() => navigate("/")}>
 					Back to home
-				</button>
+				</Button>
 				<section className="movie-info-container">
 					<div className="movie-info">
 						<img
@@ -111,10 +127,11 @@ const MovieInfoPage = () => {
 						/>
 						<div className="video-gradient"></div>
 						<button className="play-video-btn">
-							<FaPlay size={40} />
+							<FaPlay size={40} onClick={openCarousel} />
 						</button>
 					</div>
 				</section>
+				<RecommendedMovies movieId={movieId} />
 			</main>
 			<RustedRageFooter />
 		</>
