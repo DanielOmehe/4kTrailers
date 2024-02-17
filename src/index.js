@@ -8,45 +8,54 @@ import RustedRageTvShows from "./components/tvshows";
 import RustedRageWatchList from "./components/watchlist";
 import RustedRageProvider from "./components/context";
 import { Toaster } from "react-hot-toast";
-import PageNotFound from './error-page'
+import PageNotFound from "./error-page";
 import MoviesInfoPage from "./components/utils/movie-info";
+import AuthUser from "./components/auth";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <RustedRageHomepage />,
-        errorElement: <PageNotFound />,
+		errorElement: <PageNotFound />,
 	},
 	{
-		path: "movies",
+		path: "/movies",
 		element: <RustedRageMovies />,
 	},
 	{
-		path: "shows",
+		path: "/shows",
 		element: <RustedRageTvShows />,
 	},
 	{
-		path: "watchlist",
+		path: "/watchlist",
 		element: <RustedRageWatchList />,
 	},
 	{
-		path: "movies/:movieId/:movieName",
+		path: "/movies/:movieId/:movieName",
 		element: <MoviesInfoPage />,
-        errorElement: <PageNotFound />,
+		errorElement: <PageNotFound />,
 	},
 	{
-		path: "shows/:showId/:showName",
+		path: "/shows/:showId/:showName",
 		element: <h1>This is the Tv Shows Info Page</h1>,
-        errorElement: <PageNotFound />,
+		errorElement: <PageNotFound />,
+	},
+	{
+		path: "/login",
+		element: <AuthUser name={'Login'}/>,
+	},
+	{
+		path: "/sign-up",
+		element: <AuthUser name={'Sign up'} />,
 	},
 ]);
 
 const root = createRoot(document.getElementById("root"));
 root.render(
-    <React.StrictMode>
-    <RustedRageProvider>
-    <Toaster position="top-center" />
-    <RouterProvider router={router} />
-</RustedRageProvider>
-    </React.StrictMode>
+	<React.StrictMode>
+		<RustedRageProvider>
+			<Toaster position="top-center" />
+			<RouterProvider router={router} />
+		</RustedRageProvider>
+	</React.StrictMode>
 );

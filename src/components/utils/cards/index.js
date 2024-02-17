@@ -14,7 +14,7 @@ const MoviesCard = ({ movie }) => {
 			? "yellow"
 			: "red";
 	return (
-		<Link to={`movies/${id}/${title ? title : name}`}>
+		<Link to={`/movies/${id}/${title ? title : name}`}>
 			{" "}
 			<div className="movies-card">
 				<div className="movie-poster">
@@ -42,10 +42,10 @@ const MoviesCard = ({ movie }) => {
 				</div>
 				<div className="movie-control-btns">
 					<button className="play-btn">
-						<FaPlay size={25} fill="#000" />
+						<FaPlay size={20} fill="#000" />
 					</button>
 					<button className="add-to-watchlist">
-						<FaPlus size={25} fill="#000" />
+						<FaPlus size={20} fill="#000" />
 					</button>
 				</div>
 			</div>

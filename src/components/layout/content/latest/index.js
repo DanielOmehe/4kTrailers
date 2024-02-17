@@ -1,6 +1,6 @@
 import MoviesCard from '../../../utils/cards'
 import './index.scss'
-import ShowMore from '../../../utils/showMore';
+import ShowMore from '../../../utils/button/showMore';
 
 const LatestMoviesNdTv =({ name, movies })=>{
     return(

@@ -4,17 +4,6 @@
     margin-top: 80px;
     padding: 1rem 2.4rem;
 
-    .back-to-home{
-        padding: .5rem 1rem;
-        border-radius: .4rem;
-        font-size: 1.2rem;
-        border: none;
-        outline: none;
-        background: #fff;
-        color: #000;
-        margin-bottom: 1rem;
-    }
-
     .movie-info-container{
         width: 100%;
         display: grid;
@@ -22,6 +11,7 @@
 
         .movie-info{
             padding: 1rem 2rem;
+            padding-left: 0;
 
             .movie-poster{
                 margin-bottom: 1.5rem;
@@ -60,11 +50,13 @@
             .production{
 
                 .companies{
-                    display: flex;
-                    align-items: flex-start;
-                    justify-content: flex-start;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    align-content: center;
                     gap: 1rem;
                     margin-top: 1.5rem;
+                    background: #fff;
+                    padding: 1rem;
                 }
             }
 
