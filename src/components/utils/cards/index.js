@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaPlay } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
 
-const MoviesCard = ({ movie }) => {
+const MoviesCard = ({ movie, path }) => {
 	const { id, vote_average, title, name, poster_path, media_type } = movie;
 	const total_vote_percentage = Math.floor((vote_average / 10) * 100);
 	let color =
@@ -13,8 +13,10 @@ const MoviesCard = ({ movie }) => {
 			: total_vote_percentage < 80 && total_vote_percentage > 60
 			? "yellow"
 			: "red";
+	
+			console.log(media_type)
 	return (
-		<Link to={`/movies/${id}/${title ? title : name}`}>
+		<Link to={media_type === 'movie' ? `/movies/${id}/${title ? title : name}` : `/tv/${id}/${title ? title : name}`}>
 			{" "}
 			<div className="movies-card">
 				<div className="movie-poster">

@@ -1,0 +1,124 @@
+.tv-info-page{
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+    padding: 1rem 2.4rem;
+
+    .tv-info-container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+
+        .tv-info{
+            padding: 1rem 2rem;
+            padding-left: 0;
+
+            .tv-poster{
+                margin-bottom: 1.5rem;
+            }
+
+            .tv-title{
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .tv-details{
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .genres{
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 1rem;
+                margin-bottom: 1rem;
+
+                .genre-names{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: .2rem;
+                }
+
+
+                p{
+                    margin-top: .1rem;
+                }
+            }
+
+            .production{
+
+                .companies{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    align-content: center;
+                    gap: 1rem;
+                    margin-top: 1.5rem;
+                    background: #fff;
+                    padding: 1rem;
+                }
+            }
+
+            .country{
+                margin-top: 1rem;
+                display: flex;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .tv-rating{
+                margin-top: 1rem;
+                display: flex;
+                gap: .5rem;
+            }
+
+            .text{
+                margin-top: .6rem;
+            }
+        }
+
+        .tv-video-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            .video-gradient{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                z-index: 10;
+                left: 0;
+                background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .5));
+            }
+
+            .video-backdrop{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                z-index: 1;
+            }
+
+            .play-video-btn{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: none;
+                outline: none;
+                background: #007bff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                position: absolute;
+                z-index: 15;
+            }
+        }
+    }
+}

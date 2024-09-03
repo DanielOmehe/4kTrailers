@@ -3,22 +3,23 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { useNavigate } from "react-router-dom";
-import RustedRageNavBar from "../navbar";
-import RustedRageFooter from "../footer";
 import { FaStar, FaPlay } from "react-icons/fa6";
-import MovieVideoContainer from "../video";
-import { useRustedRageContext } from "../../context";
-import RecommendedMovies from "../recommended";
-import Button from "../button";
+import RustedRageNavBar from "../utils/navbar";
+import RustedRageFooter from "../utils/footer";
+import RecommendedSeries from "../utils/recommended/series";
+import { useRustedRageContext } from "../context";
+import Button from "../utils/button";
+import MovieVideoContainer from "../utils/video";
+import SeriesEpisodes from "./episodes";
 
-const MovieInfoPage = () => {
-	const [movieData, setMovieData] = useState([]);
+const TvShowsInfoPage = () => {
+	const [showData, setShowData] = useState([]);
 	const [videos, setVideos] = useState();
-	const { movieId } = useParams();
+	const { seriesId } = useParams();
 	const navigate = useNavigate();
 	const api_key = "b62dddbb37d8ec434e52a02797220057";
 	const { openCarousel, showCarousel } = useRustedRageContext();
-	console.log(movieId);
+	console.log(seriesId);
 
 	const {
 		poster_path,
@@ -33,20 +34,20 @@ const MovieInfoPage = () => {
 		runtime,
 		genres,
 		backdrop_path,
-	} = movieData;
+	} = showData;
 
 	useEffect(() => {
-		const getMovieData = async (url) => {
+		const getShowData = async (url) => {
 			try {
 				const response = await axios.get(url);
 				const data = await response.data;
-				setMovieData(data);
+				setShowData(data);
 			} catch (error) {
 				console.log(error);
 			}
 		};
 
-		const getMovieVideos = async (url) => {
+		const getShowVideos = async (url) => {
 			try {
 				const response = await axios.get(url);
 				const data = await response.data;
@@ -56,30 +57,30 @@ const MovieInfoPage = () => {
 			}
 		};
 
-		getMovieData(
-			`https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=${api_key}`
+		getShowData(
+			`https://api.themoviedb.org/3/tv/${seriesId}?language=en-US&api_key=${api_key}`
 		);
-		getMovieVideos(
-			`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US&api_key=${api_key}`
+		getShowVideos(
+			`https://api.themoviedb.org/3/tv/${seriesId}/videos?language=en-US&api_key=${api_key}`
 		);
-	}, [movieId, movieData, videos]);
+	}, [seriesId, showData, videos]);
 	return (
 		<>
 			<RustedRageNavBar />
 			<>{showCarousel ? <MovieVideoContainer videos={videos} /> : null}</>
-			<main className="movie-info-page">
+			<main className="tv-info-page">
 				<Button name={"back-to-home"} click={() => navigate("/")}>
 					Back to home
 				</Button>
-				<section className="movie-info-container">
-					<div className="movie-info">
+				<section className="tv-info-container">
+					<div className="tv-info">
 						<img
 							src={`https://image.tmdb.org/t/p/w185${poster_path}`}
-							alt="movie poster"
-							className="movie-poster"
+							alt="tv poster"
+							className="tv-poster"
 						/>
-						<h1 className="movie-title">{title ? title : name}</h1>
-						<p className="movie-details">{overview}</p>
+						<h1 className="tv-title">{title ? title : name}</h1>
+						<p className="tv-details">{overview}</p>
 						<div className="genres">
 							<h3>Genres: </h3>
 							<p className="genre-names">
@@ -111,7 +112,7 @@ const MovieInfoPage = () => {
 									: null}
 							</p>
 						</div>
-						<div className="movie-rating">
+						<div className="tv-rating">
 							<FaStar />
 							<p>{vote_average}</p>
 						</div>
@@ -119,7 +120,7 @@ const MovieInfoPage = () => {
 						<p className="text">Revenue: {revenue}</p>
 						<p className="text">Duration: {runtime} m</p>
 					</div>
-					<div className="movie-video-container">
+					<div className="tv-video-container">
 						<img
 							className="video-backdrop"
 							src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
@@ -131,11 +132,12 @@ const MovieInfoPage = () => {
 						</button>
 					</div>
 				</section>
-				<RecommendedMovies movieId={movieId} />
+                <SeriesEpisodes movieId={seriesId} />
+				<RecommendedSeries movieId={seriesId} />
 			</main>
 			<RustedRageFooter />
 		</>
 	);
 };
 
-export default MovieInfoPage;
+export default TvShowsInfoPage;

@@ -10,6 +10,7 @@ import RustedRageProvider from "./components/context";
 import { Toaster } from "react-hot-toast";
 import PageNotFound from "./error-page";
 import MoviesInfoPage from "./components/utils/movie-info";
+import TvShowsInfoPage from "./components/tv-info";
 import AuthUser from "./components/auth";
 
 const router = createBrowserRouter([
@@ -36,8 +37,8 @@ const router = createBrowserRouter([
 		errorElement: <PageNotFound />,
 	},
 	{
-		path: "/shows/:showId/:showName",
-		element: <h1>This is the Tv Shows Info Page</h1>,
+		path: "/tv/:seriesId/:seriesName",
+		element: <TvShowsInfoPage />,
 		errorElement: <PageNotFound />,
 	},
 	{

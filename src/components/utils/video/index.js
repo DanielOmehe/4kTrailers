@@ -39,8 +39,6 @@ const MovieVideoContainer = ({ videos }) => {
 						  ))
 						: null}
 				</div>
-                <p>Total Slides: {videos.length}</p>
-                <p>Current slide: {currentSlide +1}</p>
 				<FaArrowCircleRight
 					size={35}
 					onClick={nextSlide}
